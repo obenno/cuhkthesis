@@ -4,17 +4,32 @@
 \usepackage{thesis}
 \usepackage{latexsym}
 \usepackage[dvips]{epsfig}
+
+% Add Chinese support
+\usepackage{xeCJK}
+\setmainfont{LiberationSans-Regular.ttf}
+%\setCJKmainfont{FandolSong-Regular}
+
+% use harvard sytle citation,
+% included in package harvard
+\usepackage{harvard}
+
 %\usepackage{color}
 
-\topmargin	0.0cm
-\textheight    21cm
+%\topmargin	0.0cm
+%\textheight    21cm
 %\renewcommand{\arraystretch}{1.2}
+
+% Set margin with geometry
+\usepackage{geometry}
+\geometry{a4paper,left=40mm,right=25mm}
 
 %=======================================================
 \begin{document}
 
 %set double line spacing
-\linespread{2}
+%changed to 1.5 spacing by xzx
+\linespread{1.5}
 
 %cover page information
 
@@ -26,6 +41,21 @@
 \submitdate{June 2004}
 \coverpage
 
+%=======================================================
+
+%committee
+\committee{
+  Professor Leonard Leakey Hofstadter (Chair)\\
+  Professor Sheldon Lee Cooper (Thesis Supervisor)\\
+  Professor Howard Joel Wolowitz (Committee Member)\\
+  Professor Rajesh Ramayan Koothrappali (External Examiner)\\
+}
+\committeepage
+
+%=======================================================
+
+% statementpage
+\statementpage
 
 %=======================================================
 
@@ -44,8 +74,8 @@
 %=======================================================
 
 %dedication
-
-\dedicationpage
+% dedicationpage removed
+%\dedicationpage
 
 %=======================================================
 
@@ -89,8 +119,8 @@
 
 \newpage
 \addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{ieee}
-\bibliography{database}
+\bibliographystyle{apsr}
+\bibliography{reference}
 
 
 

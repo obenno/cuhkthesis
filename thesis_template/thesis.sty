@@ -5,6 +5,8 @@
 \def\authorname#1{\def\authorname{#1}}
 \def\submitdate#1{\def\submitdate{#1}}
 \def\institution{The Chinese University of Hong Kong}
+\newcommand{\committee}[1]{\def\@committee{#1}}
+\newcommand{\thecommittee}{\@committee}
 
 \def\coverpage{
 	% no page number for the cover page
@@ -17,52 +19,104 @@
 	\vskip 1cm
 	\Large {\bf \authorname}
 
-	\vskip 1cm
-	\large
+	%\vskip 2cm
+    \vskip 7cm
+	%\large
+    \normalsize
 	% both Fulfilment and Fulfillment are correct
-	A Thesis Submitted in Partial Fulfilment \\
+	A Thesis Submitted in Partial Fulfillment \\
 	of the Requirements for the Degree of \\
 	\degree \\
 	in \\
 	\programme \\
 
-	\vskip 1cm
-	\large Supervised by \\
+    % remove supervisor
+	%\vskip 1cm
+	%\large Supervised by \\
+    %
+	%\vskip 0.5cm
+	%\large {\bf \supervisor}
 
-	\vskip 0.5cm
-	\large {\bf \supervisor}
-
-	\vskip 1cm
-	\large
-	\copyright \institution \\
+	%\vskip 1cm
+    \vskip 2cm
+	%\large
+    \normalsize
+    % remove copyright symbol
+	%\copyright \institution \\
+    \institution \\
 	\submitdate
 	\end{center}
 
 	\vfill
 	\noindent
-\institution~holds the copyright of this thesis.
-Any person(s) intending to use a part or whole of the materials in the thesis
-in a proposed publication must seek copyright release from the Dean of the
-Graduate School.
+
+
+% remove copyright description, add ProQuest page later
+%\institution~holds the copyright of this thesis.
+%Any person(s) intending to use a part or whole of the materials in the thesis
+%in a proposed publication must seek copyright release from the Dean of the
+%Graduate School.
 	\newpage
 }
 
 %=======================================================
 
 \def\abstractpage{
-        \addcontentsline{toc}{chapter}{Abstract}
-
-	\vspace*{2cm}
-	\large \noindent
-	Abstract of thesis entitled: \\
-	\indent \thesistitle \\
+  \chapter*{Abstract}
+  
+  \addcontentsline{toc}{chapter}{Abstract}
+  % This part changed, submitted by moved to the end
+  %\vskip 1cm \noindent
+  \input{abstract.tex}
+  \vspace*{1cm}
+  %\large \noindent
+  \begin{flushright}
+    %Abstract of thesis entitled: \\
+    %\indent \thesistitle \\
+    \normalsize
 	Submitted by \authorname \\
 	for the degree of \degree \\
-	at \institution~in \submitdate
+	at \institution
+  \end{flushright}
+	%\vskip 1cm \noindent
+	%\input{abstract.tex}
+  \newpage
 
-	\vskip 1cm \noindent
-	\input{abstract.tex}
-	\newpage
+  \chapter*{摘要}
+  \addcontentsline{toc}{chapter}{摘要}
+  \input{abstract_cn.tex}
+}
+
+%=======================================================
+
+\def\committeepage{
+  \thispagestyle{empty}
+  \vspace*{10mm}
+  \begin{center}
+    \vfill
+    \large
+    \underline{\bf Thesis Assessment Committee}
+    \vskip 1.5cm
+    {
+      \begin{large}
+        \thecommittee
+      \end{large}
+    }
+    \vfill
+  \end{center}
+  \newpage
+}
+
+%=======================================================
+
+\def\statementpage{
+  \chapter*{Statement}
+  \input{statement.tex}
+  \vspace{1cm}
+  \begin{flushright}
+    \authorname
+  \end{flushright}
+  \newpage
 }
 
 %=======================================================

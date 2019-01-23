@@ -5,6 +5,14 @@ Users are assumed to have basic knowledge and real experience with LaTeX,
 a professional document preparation/typesetting system.
 
 
+Updated
+===========
+- Margin changed: left 4cm, right 2.5cm
+- Chinese abstract added.
+- Committee page added.
+- Statement page added.
+- Bibliography style changed to aspr in harvard package.
+- Fonts changed to local installed LiberationSans.
 
 Software Tool
 =============
@@ -16,6 +24,8 @@ Open source software:
 	MiKTeX (for Windows and various platforms)
 	TeX/LaTeX package (for Linux/Unix)
 
+Additional packages needed for linux:
+    "texlive-lang-chinese" (ubuntu 18.10) for chinese support.
 
 
 Usage
