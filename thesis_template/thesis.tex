@@ -1,6 +1,6 @@
 \documentclass[12pt]{report}
-
-\usepackage{graphics}
+% use graphicx, extensive package of graphics
+\usepackage{graphicx}
 \usepackage{thesis}
 \usepackage{latexsym}
 \usepackage[dvips]{epsfig}
@@ -12,7 +12,12 @@
 
 % use harvard sytle citation,
 % included in package harvard
-\usepackage{harvard}
+%\usepackage{harvard}
+
+% harvard package doesn't compatible with hyperref
+% use apacite instead, remember to use natbibapa mode
+% use \citp \citet for citation
+\usepackage[natbibapa]{apacite}
 
 %\usepackage{color}
 
@@ -23,6 +28,16 @@
 % Set margin with geometry
 \usepackage{geometry}
 \geometry{a4paper,left=40mm,right=25mm}
+
+% Include figures
+% Defind images folder path
+\graphicspath{ {images/} }
+
+% Modulate figure or table caption
+\usepackage[labelfont=bf,labelformat=simple,font=bf]{caption}
+
+% Activate hyperlinks, this must be the last called package
+\usepackage[hidelinks]{hyperref}
 
 %=======================================================
 \begin{document}
@@ -121,7 +136,7 @@
 
 \newpage
 \addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{apsr}
+\bibliographystyle{apacite}
 \bibliography{reference}
 
 
